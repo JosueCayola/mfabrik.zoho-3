@@ -128,8 +128,8 @@ class TestCRM(unittest.TestCase):
         self.add_dummy_lead()
         
         leads = self.crm.get_records()
-        print "Got leads"
-        print leads
+        print ("Got leads")
+        print (leads)
         
     def test_delete_leads(self):
 
