@@ -9,7 +9,8 @@ __author__ = "Mikko Ohtamaa <mikko@mfabrik.com>"
 __license__ = "GPL"
 __docformat__ = "Epytext"
 
-import urllib, urllib2
+import urllib.request
+import urllib.parse
 
 import logging
 
@@ -117,8 +118,8 @@ class Connection(object):
         }
 
         request_url = "https://accounts.zoho.com/login"
-        request = urllib2.Request(request_url, urllib.urlencode(params))
-        body = urllib2.urlopen(request).read()
+        request = urllib.request.Request(request_url, urllib.parse.urlencode(params))
+        body = urllib.request.urlopen(request).read()
 
         data = self._parse_ticket_response(body)
 
@@ -206,9 +207,9 @@ class Connection(object):
             for key, value in parameters.items():
                 logger.debug(key + ": " + value)
         self.parameters = parameters
-        self.parameters_encoded = urllib.urlencode(parameters)
-        request = urllib2.Request(url, urllib.urlencode(parameters))
-        response = urllib2.urlopen(request).read()
+        self.parameters_encoded = urllib.parse.urlencode(parameters)
+        request = urllib.request.Request(url, urllib.parse.urlencode(parameters))
+        response = urllib.request.urlopen(request).read()
 
         if logger.getEffectiveLevel() == logging.DEBUG:
             # Output Zoho API call payload
