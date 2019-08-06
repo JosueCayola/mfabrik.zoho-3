@@ -49,5 +49,5 @@ docs/apidocs/*
 *.debug.js
 *.min.css
 *.debug.css
-
-
+.idea
+.code
