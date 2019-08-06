@@ -21,7 +21,7 @@ except ImportError:
          from lxml import etree
          from lxml.etree import  Element, tostring, fromstring
      except ImportError:
-         print "XML library not available:  no etree, no lxml"
+         print ("XML library not available:  no etree, no lxml")
          raise
 
 
@@ -237,7 +237,7 @@ class Connection(object):
         for error in root.findall("error"):
             parameters = self.parameters
             parameters_encoded = self.parameters_encoded
-            print "Got error"
+            print ("Got error")
             for message in error.findall("message"):
                 raise ZohoException(message.text)
         
