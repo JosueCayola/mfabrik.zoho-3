@@ -3,7 +3,7 @@ import os
 
 version = '1.1'
 
-setup(name='mfabrik.zoho',
+setup(name='mfabrik.zoho-3',
       version=version,
       description="Zoho API integration for Python",
       long_description=open("README.txt").read() + "\n" +
